@@ -5,3 +5,26 @@ print (3.9999), int(3.999)) #3.9999 becomes 3
 print(3.0), int(3.0)) # 3.0 becomes 3
 
 print(-3.999, int(3.999)) #-3.999 becomes -3
+
+
+
+
+
+
+#second line of code
+
+we can also turn strings into intergers, see below
+print ("2345", int("2345")) # putting numbers in paranthesis makes it a string, this int function converts it into an int
+
+print (17, int(17)) # this stays as 17
+
+print(int("23bottles")) # this will read as an error because the string isnt an integer
+
+print (float("123.45")) # this string turns into a float 123.45
+
+print (type(float("123.45")) # the type function tells us what data type we are using , in this case a FLOAT
+
+print (int(53.475)) # this becomes 53. the int function just ignores everything after the decimal.
+
+#THIS WORKS AS A STRING TOO
+print(str(17)) # this turns into the string 17
