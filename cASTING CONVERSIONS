@@ -1,0 +1,7 @@
+print (3.14), int(3.14)) #3.14 becomes 3
+
+print (3.9999), int(3.999)) #3.9999 becomes 3
+
+print(3.0), int(3.0)) # 3.0 becomes 3
+
+print(-3.999, int(3.999)) #-3.999 becomes -3
