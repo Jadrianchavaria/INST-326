@@ -1,0 +1,30 @@
+
+
+class Recipie_maker():
+    
+    def __init__(self):
+        pass
+    
+    def view(self): #Diya
+        pass
+    
+    def add_recipie(self): #Diya
+        pass
+    
+    def update_recipie(self): #Paul
+        pass
+    
+    def delete_recipie(self): #Paul
+        pass
+    
+    def add_macros(self):
+        pass
+    
+    def update_macros(self):
+        pass
+    
+    def delete_macros(self):
+        pass
+    
+    def random_recipie(self):
+        pass
