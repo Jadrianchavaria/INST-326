@@ -28,3 +28,24 @@ class Recipie_maker():
     
     def random_recipie(self):
         pass
+    
+
+
+# Display page when program is launched (rough draft - feel free to change)
+
+print("\n\t\t\tWelcome to Recipie Maker\t\t\t\n")
+print("\tRecipie maker is a database created to archive recipies.")
+print("\tPlease input the number that corresponds to the action\n\n")
+print("\t\t\t\t  1: View Recipies\n")
+print("\t\t2: Add Recipie \t\t\t\t5: Add Macros\n")
+print("\t\t3: Update Recipie \t\t\t6: Update Macros\n")
+print("\t\t4: Delete Recipie \t\t\t7: Delete Macros\n")
+print("\t\t\t\t8: Pick Random Recipies\n")
+
+# Getting user input 
+
+choice = input()
+
+if choice == 1:
+    pass
+
