@@ -9,6 +9,9 @@ class Recipie_maker():
         pass
     
     def add_recipie(self): #Diya
+        recipie_dict = {}
+        #make text file with all recipies 
+        #method will open file 
         pass
     
     def update_recipie(self): #Paul
@@ -49,4 +52,4 @@ choice = input()
 if choice == 1:
     pass
 
-#hffjhjhkknb
+
