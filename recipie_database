@@ -6,12 +6,26 @@ class RecipeMaker():
         pass
     
     def view(self):
+        """
+        This method prints all recipes stored in the RecipeMaker instance along with their ingredients.
+
+    Args:
+        self: The RecipeMaker instance itself.
+
+        """
         print("Viewing Recipes:")
         for recipe_name, ingredients in self.recipes.items():
             print(f"{recipe_name}: {', '.join(ingredients)}")
         pass
     
-    def add_recipie(self, name, ingredients): #Diya
+    def add_recipie(self, name, ingredients):
+        """This method adds a new recipe to the RecipeMaker instance with the 
+        specified name and ingredients.
+
+        Args:
+            name (str): The name of the recipe to be added.
+            ingredients (list of str): The list of ingredients for the recipe. 
+        """
         self.recipes[name] = ingredients
         print(f"Recipe '{name}' added successfully!")
         #make text file with all recipies 
@@ -20,6 +34,12 @@ class RecipeMaker():
         pass
     
     def update_recipie(self, name, new_ingredients):
+        """_summary_
+
+        Args:
+            name (_type_): _description_
+            new_ingredients (_type_): _description_
+        """
         if name in self.recipes:
             self.recipes[name] = new_ingredients
             print(f"Recipe '{name}' updated successfully!")
@@ -29,6 +49,11 @@ class RecipeMaker():
         pass
     
     def delete_recipie(self, name):
+        """_summary_
+
+        Args:
+            name (_type_): _description_
+        """
         if name in self.recipes:
             del self.recipes[name]
             print(f"Recipe '{name}' deleted successfully!")
@@ -37,14 +62,21 @@ class RecipeMaker():
         pass
     
     def add_macros(self):
-
-        #make text file with macros 
+        """_summary_
+        """
+        #make text file with macros
+        #method will open file 
+        #open file, 'w', create tuple with all recipies
         pass
     
     def update_macros(self):
+        """_summary_
+        """
         pass
     
     def delete_macros(self):
+        """_summary_
+        """
         pass
     
     def random_recipie(self):
