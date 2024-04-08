@@ -18,7 +18,7 @@ class RecipeMaker():
             print(f"{recipe_name}: {', '.join(ingredients)}")
         pass
     
-    def add_recipie(self, name, ingredients):
+    def add_recipe(self, name, ingredients):
         """This method adds a new recipe to the RecipeMaker instance with the 
         specified name and ingredients.
 
