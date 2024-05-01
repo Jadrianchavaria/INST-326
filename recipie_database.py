@@ -104,7 +104,6 @@ print("\t\t\t\t8: Pick Random Recipe\n")
 choice = input("Enter your choice: ")
 
 if choice == 1:
-    if choice == '1':
         recipe_maker.view()
 elif choice == '2':
     name = input("Enter recipe name: ")
