@@ -45,26 +45,50 @@ class RecipeMaker():
             print(f"Recipe '{name}' deleted successfully!")
         else:
             print(f"Recipe '{name}' not found!")
-    
-    def add_macros(self):
-        """This method adds macros to recipes."""
-        # Implementation for adding macros
-        
-    def update_macros(self):
-        """This method updates macros."""
-        # Implementation for updating macros
-        
-    def delete_macros(self):
-        """This method deletes macros."""
-        # Implementation for deleting macros
-    
+
     def random_recipe(self):
-        """This method selects a random recipe from the RecipeMaker instance."""
+
         if self.recipes:
             random_recipe_name = random.choice(list(self.recipes.keys()))
             print(f"Random Recipe: {random_recipe_name}: {', '.join(self.recipes[random_recipe_name])}")
         else:
             print("No recipes available!")
+
+    def add_macros(self, recipe_name, macros):
+        """This method adds macros to a specific recipe."""
+        if recipe_name in self.recipes:
+            if "macros" not in self.recipes[recipe_name]:
+                self.recipes[recipe_name]["macros"] = macros
+                self.save_recipes()  # Save the updated recipes to file
+                print(f"Macros added for recipe '{recipe_name}'")
+            else:
+                print(f"Macros already exist for recipe '{recipe_name}'. Use update_macros to change them.")
+        else:
+            print(f"Recipe '{recipe_name}' not found!")
+
+    def update_macros(self, recipe_name, new_macros):
+        
+        if recipe_name in self.recipes:
+            if "macros" in self.recipes[recipe_name]:
+                self.recipes[recipe_name]["macros"] = new_macros
+                self.save_recipes()
+                print(f"Macros updated for recipe '{recipe_name}'")
+            else:
+                print(f"No macros found for recipe '{recipe_name}'")
+        else:
+            print(f"Recipe '{recipe_name}' not found!")
+
+    def delete_macros(self, recipe_name):
+        
+        if recipe_name in self.recipes:
+            if "macros" in self.recipes[recipe_name]:
+                del self.recipes[recipe_name]["macros"]
+                self.save_recipes()
+                print(f"Macros deleted for recipe '{recipe_name}'")
+            else:
+                print(f"No macros found for recipe '{recipe_name}'")
+        else:
+            print(f"Recipe '{recipe_name}' not found!")
 
 # Display page when program is launched
 recipe_maker = RecipeMaker()  
@@ -81,7 +105,6 @@ print("\t\t\t\t8: Pick Random Recipe\n")
 # Getting user input 
 choice = input("Enter your choice: ")
 
-# Convert choice to integer
 choice = int(choice)
 
 if choice == 1:
@@ -98,15 +121,21 @@ elif choice == 4:
     name = input("Enter recipe name to delete: ")
     recipe_maker.delete_recipe(name)
 elif choice == 5:
-    recipe_maker.add_macros()
+    recipe_name = input("Enter recipe name to add macros: ")
+    macros = input("Enter macros: ")
+    recipe_maker.add_macros(recipe_name, macros)
 elif choice == 6:
-    recipe_maker.update_macros()
+    recipe_name = input("Enter recipe name to update macros: ")
+    new_macros = input("Enter new macros: ")
+    recipe_maker.update_macros(recipe_name, new_macros)
 elif choice == 7:
-    recipe_maker.delete_macros()
+    recipe_name = input("Enter recipe name to delete macros: ")
+    recipe_maker.delete_macros(recipe_name)
 elif choice == 8:
     recipe_maker.random_recipe()
 else:
     print("Invalid choice!")
+
 
 
 
