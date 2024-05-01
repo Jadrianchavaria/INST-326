@@ -48,7 +48,7 @@ class RecipeMaker():
         #calls file and adds recipies 
         pass
     
-    def delete_recipie(self, name):
+    def delete_recipe(self, name):
         """_summary_
 
         Args:
