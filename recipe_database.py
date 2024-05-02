@@ -34,7 +34,7 @@ class RecipeMaker():
     
     def update_recipe(self, name, new_ingredients):
         if name in self.recipes:
-            self.recipes[name] = new_ingredients
+            self.recipes[name] += new_ingredients
             self.save_recipes()  
             print(f"Recipe '{name}' updated successfully!")
         else:
@@ -77,12 +77,12 @@ class RecipeMaker():
     
     def add_macros(self, name, new_macros):
         self.macros[name] = new_macros
-        self.save_recipes() #Saves Macros to text file 
+        self.save_macros() #Saves Macros to text file 
         print(f"Macros'{name}' added successfully!")
     
     def update_macros(self, name, new_macros):
         if name in self.macros:
-            self.macros[name] = new_macros
+            self.macros[name] += new_macros
             self.save_macros()  
             print(f"Macros '{name}' updated successfully!")
         else:
@@ -102,11 +102,11 @@ recipe_maker = RecipeMaker()
 print("\n\t\t\tWelcome to Recipe Maker\t\t\t\n")
 print("\tRecipe Maker is a database created to archive recipes.")
 print("\tPlease input the number that corresponds to the action\n\n")
-print("\t\t\t\t  1: View Recipes\n")
-print("\t\t2: Add Recipe \t\t\t\t5: View Macros\n")
-print("\t\t3: Update Recipe \t\t\t6: Add Macros\n")
-print("\t\t4: Delete Recipe \t\t\t7: update Macros\n")
-print("\t\t8: Delete Macros \t\t\t9: Random Recipe\n")
+print("\t\t1: View Recipes \t\t\t5: View Macros\n")
+print("\t\t2: Add Recipe \t\t\t\t6: Add Macros\n")
+print("\t\t3: Update Recipe \t\t\t7: Update Macros\n")
+print("\t\t4: Delete Recipe \t\t\t8: Delete Macros\n")
+print("\t\t\t\t   9: Random Recipe\n")
 
 # Getting user input 
 choice = input("Enter your choice: ")
