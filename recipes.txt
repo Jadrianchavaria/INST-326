@@ -1,0 +1,3 @@
+cake:eggs,  milk,  butter
+Spaghetti:pasta,  red sauce
+pizza:cheese
