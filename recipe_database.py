@@ -86,7 +86,6 @@ class RecipeMaker():
             self.save_macros()  
             print(f"Macros '{name}' updated successfully!")
         else:
-<<<<<<< Updated upstream
             print(f"Macros '{name}' not found!")
     
     def delete_macros(self, name):
@@ -94,19 +93,6 @@ class RecipeMaker():
             del self.macros[name]
             self.save_macros()  
             print(f"Macros '{name}' deleted successfully!")
-=======
-            print(f"Recipe '{recipe_name}' not found!")
-
-    def update_macros(self, recipe_name, new_macros):
-        
-        if recipe_name in self.recipes:
-            if "macros" in self.recipes[recipe_name]:
-                self.recipes[recipe_name][macros] = new_macros
-                self.save_recipes()
-                print(f"Macros updated for recipe '{recipe_name}'")
-            else:
-                print(f"No macros found for recipe '{recipe_name}'")
->>>>>>> Stashed changes
         else:
             print(f"Macros '{name}' not found!")
 
