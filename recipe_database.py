@@ -1,14 +1,29 @@
 import random
 
 class RecipeMaker():
-    
+    """
+    RecipeMakerclass to manage recipes and  macros.
+    """
+
     def __init__(self):
+        """
+        Initializes RecipeMaker object
+        Initializes recipe dictionary
+        Initializes macros dictionary
+        calls load recipe/macros methods
+        
+        """
         self.recipes = {} 
         self.load_recipes()  
         self.macros = {}
         self.load_macros()
     
     def load_recipes(self):
+        """
+        creates recipes text file.
+        formats the recipes in the text file.
+        Loads recipes from file.
+        """
         try:
             with open("recipes.txt", "r") as file:
                 for line in file:
@@ -18,21 +33,42 @@ class RecipeMaker():
             print("Recipes file not found. Creating a new one.")
     
     def save_recipes(self):
+        """
+        opens text file
+        Saves recipes to file.
+        """
         with open("recipes.txt", "w") as file:
             for name, ingredients in self.recipes.items():
                 file.write(f"{name}:{', '.join(ingredients)}\n")
     
     def view(self):
+        """
+        Displays all recipes.
+        """
         print("Viewing Recipes:")
         for recipe_name, ingredients in self.recipes.items():
             print(f"{recipe_name}: {', '.join(ingredients)}")
     
     def add_recipe(self, name, ingredients):
+        """
+        Adds a new recipe to file.
+        
+        Parameters:
+        - name (str): The name of the recipe.
+        - ingredients (list): List of ingredients for the recipe.
+        """
         self.recipes[name] = ingredients
         self.save_recipes() #Saves recipe to text file 
         print(f"Recipe '{name}' added successfully!")
     
     def update_recipe(self, name, new_ingredients):
+        """
+        Updates an existing recipe by adding new ingredients.
+        
+        Parameters:
+        - name (str): The name of the recipe to update.
+        - new_ingredients (list): List of new ingredients to add to the recipe.
+        """
         if name in self.recipes:
             self.recipes[name] += new_ingredients
             self.save_recipes()  
@@ -41,6 +77,12 @@ class RecipeMaker():
             print(f"Recipe '{name}' not found!")
     
     def delete_recipe(self, name):
+        """
+        Deletes a recipe.
+        
+        Parameters:
+        - name (str): The name of the recipe to delete.
+        """
         if name in self.recipes:
             del self.recipes[name]
             self.save_recipes()  
@@ -49,7 +91,9 @@ class RecipeMaker():
             print(f"Recipe '{name}' not found!")
 
     def random_recipe(self):
-
+        """
+        picks a random recipe.
+        """
         if self.recipes:
             random_recipe_name = random.choice(list(self.recipes.keys()))
             print(f"Random Recipe: {random_recipe_name}: {', '.join(self.recipes[random_recipe_name])}")
@@ -57,6 +101,11 @@ class RecipeMaker():
             print("No recipes available!")
 
     def load_macros(self):
+        """
+        creates macros text file.
+        formats the macros in the text file.
+        Loads macros from file.
+        """
         try:
             with open("macros.txt", "r") as file:
                 for line in file:
@@ -66,21 +115,42 @@ class RecipeMaker():
             print("Macros file not found. Creating a new one.")
     
     def save_macros(self):
+        """
+        opens text file
+        Saves macros to file.
+        """
         with open("macros.txt", "w") as file:
             for name, new_macros in self.macros.items():
                 file.write(f"{name}:{', '.join(new_macros)}\n")
     
     def view_macros(self):
+        """
+        Displays all macros.
+        """
         print("Viewing Macros:")
         for macros_name, new_macros in self.macros.items():
             print(f"{macros_name}: {', '.join(new_macros)}")
     
     def add_macros(self, name, new_macros):
+        """
+        Adds new macros for a food item.
+        
+        Parameters:
+        - name (str): The name of the food item.
+        - new_macros (list): List of macros for the food item.
+        """
         self.macros[name] = new_macros
         self.save_macros() #Saves Macros to text file 
         print(f"Macros'{name}' added successfully!")
     
     def update_macros(self, name, new_macros):
+        """
+        Updates macros for a food item.
+        
+        Parameters:
+        - name (str): The name of the food item.
+        - new_macros (list): List of new macros for the food item.
+        """
         if name in self.macros:
             self.macros[name] += new_macros
             self.save_macros()  
@@ -89,12 +159,19 @@ class RecipeMaker():
             print(f"Macros '{name}' not found!")
     
     def delete_macros(self, name):
+        """
+        Deletes macros for a food item.
+        
+        Parameters:
+        - name (str): The name of the food item.
+        """
         if name in self.macros:
             del self.macros[name]
             self.save_macros()  
             print(f"Macros '{name}' deleted successfully!")
         else:
             print(f"Macros '{name}' not found!")
+
 
 # Display page when program is launched
 recipe_maker = RecipeMaker()  
