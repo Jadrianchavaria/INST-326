@@ -1,8 +1,9 @@
+"""This script serves as a recipe database manager for a user. """
 import random
 
 class RecipeMaker():
     """
-    RecipeMakerclass to manage recipes and  macros.
+    RecipeMaker class to manage recipes and macros.
     """
 
     def __init__(self):
@@ -10,7 +11,7 @@ class RecipeMaker():
         Initializes RecipeMaker object
         Initializes recipe dictionary
         Initializes macros dictionary
-        calls load recipe/macros methods
+        Calls load recipe/macros methods
         
         """
         self.recipes = {} 
@@ -20,8 +21,8 @@ class RecipeMaker():
     
     def load_recipes(self):
         """
-        creates recipes text file.
-        formats the recipes in the text file.
+        Creates recipes text file.
+        Formats the recipes in the text file.
         Loads recipes from file.
         """
         try:
