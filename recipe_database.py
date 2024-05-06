@@ -1,6 +1,7 @@
 """This script serves as a recipe database manager for a user. """
 import random
 
+
 class RecipeMaker():
     """
     RecipeMaker class to manage recipes and macros.
@@ -35,8 +36,8 @@ class RecipeMaker():
     
     def save_recipes(self):
         """
-        opens text file
-        Saves recipes to file.
+        Opens text file
+        Saves recipes to that file. 
         """
         with open("recipes.txt", "w") as file:
             for name, ingredients in self.recipes.items():
@@ -93,7 +94,7 @@ class RecipeMaker():
 
     def random_recipe(self):
         """
-        picks a random recipe.
+        Picks a random recipe for the user. 
         """
         if self.recipes:
             random_recipe_name = random.choice(list(self.recipes.keys()))
@@ -103,8 +104,8 @@ class RecipeMaker():
 
     def load_macros(self):
         """
-        creates macros text file.
-        formats the macros in the text file.
+        Creates macros text file.
+        Formats the macros in the text file.
         Loads macros from file.
         """
         try:
@@ -117,7 +118,7 @@ class RecipeMaker():
     
     def save_macros(self):
         """
-        opens text file
+        Opens text file
         Saves macros to file.
         """
         with open("macros.txt", "w") as file:
