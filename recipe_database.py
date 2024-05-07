@@ -1,7 +1,6 @@
 """This script serves as a recipe database manager for a user. """
 import random
 
-
 class RecipeMaker():
     """
     RecipeMaker class to manage recipes and macros.
@@ -141,7 +140,7 @@ class RecipeMaker():
         - name (str): The name of the food item.
         - new_macros (list): List of macros for the food item.
         """
-        self.macros[name] = new_macros
+        self.macros[name] += new_macros
         self.save_macros() #Saves Macros to text file 
         print(f"Macros'{name}' added successfully!")
     

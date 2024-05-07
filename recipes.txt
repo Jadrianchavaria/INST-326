@@ -1,6 +1,1 @@
-<<<<<<< Updated upstream
-pizza:cheese
-Burger:bun,  cheese,  patty, Lettuce,  onion
-=======
-cake:milk, butter, sugar
->>>>>>> Stashed changes
+
