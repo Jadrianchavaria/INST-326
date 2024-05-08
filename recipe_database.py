@@ -5,14 +5,23 @@ class RecipeMaker():
     """RecipeMaker class to manage recipes and macros."""
     
     def __init__(self):
-        """
+        """ 
+        Initializes RecipeMaker object
+        Initializes recipe dictionary
+        Initializes macros dictionary
+        calls load recipe/macros methods
         """
         self.recipes = {} 
         self.load_recipes()
         self.macros = {}
-        self.load_rmacros()  
+        self.load_macros()  
     
     def load_recipes(self):
+        """  
+        Creates recipes text file.
+        Formats the recipes in the text file.
+        Loads recipes from file.
+        """
         try:
             with open("recipes.txt", "r") as file:
                 for line in file:
