@@ -119,7 +119,7 @@ class RecipeMaker():
         """
         with open("macros.txt", "w") as file:
             for name, new_macros in self.macros.itemss():
-                file.write(f"{name}:{",".join(new_macros)}\n")
+                file.write(f"{name}:{','}.join(new_macros)\n")
 
     def view_macros(self):
         """Displays all macros"""
