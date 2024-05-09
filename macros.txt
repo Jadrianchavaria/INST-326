@@ -1,0 +1,2 @@
+Chicken:Protein: 15g, Carbs: 5g, Fats: 9g
+Bread:Carbs: 10g, Protein: 4g, Fats: 3g
