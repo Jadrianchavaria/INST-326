@@ -202,7 +202,6 @@ def display_menu():
 
 
 def main():
-    # Flag to check if it's the first time running the program
     first_run = True
 
     recipe_maker = RecipeMaker()
